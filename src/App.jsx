@@ -150,7 +150,7 @@ export default function App() {
               <a className="btn btn-gold" href={shopWA} target="_blank" rel="noopener">Claim on WhatsApp</a>
             </div>
             <div className="sale-img reveal">
-              <img src="/img/p01.jpg" alt="BinSaeed stitched lawn suits on sale at Rida Boutique" loading="lazy" />
+              <img src={`${import.meta.env.BASE_URL}img/p01.jpg`} alt="BinSaeed stitched lawn suits on sale at Rida Boutique" loading="lazy" />
             </div>
           </div>
         </section>
@@ -180,7 +180,7 @@ export default function App() {
             </div>
             <div className="reveal">
               <div className="sale-img">
-                <img src="/img/p05.jpg" alt="Teal HZ embroidered festive suit with dupatta at Rida Boutique" loading="lazy" />
+                <img src={`${import.meta.env.BASE_URL}img/p05.jpg`} alt="Teal HZ embroidered festive suit with dupatta at Rida Boutique" loading="lazy" />
               </div>
             </div>
           </div>
