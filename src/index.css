@@ -103,7 +103,7 @@ a { color: inherit; }
 /* ---------- ticker ---------- */
 .ticker { background: var(--charcoal); color: var(--ivory); overflow: hidden; }
 .ticker-track {
-  display: flex; gap: 0; white-space: nowrap; padding: 13px 0;
+  display: flex; gap: 0; white-space: nowrap; padding: 13px 0 13px 20px;
   animation: tick 26s linear infinite;
 }
 .ticker span {
@@ -197,10 +197,18 @@ footer { background: var(--charcoal); color: #b9ad8f; padding: 54px 0 30px; }
   .two-col { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
+  .nav { padding-top: env(safe-area-inset-top, 0px); }
+  .nav-inner { height: 60px; }
+  .brand { gap: 10px; }
+  .brand-mark { width: 32px; height: 32px; font-size: 18px; }
+  .brand-name { font-size: 15px; letter-spacing: 0.1em; white-space: nowrap; }
+  .brand-sub { font-size: 9px; letter-spacing: 0.22em; white-space: nowrap; }
+  .btn-nav { min-height: 40px; padding: 8px 14px; font-size: 11px; white-space: nowrap; }
   .nav-links a:not(.btn) { display: none; }
   .section { padding: 64px 0; }
   .grid { gap: 14px; }
   .card-body { padding: 14px 14px 16px; }
   .card-name { font-size: 16px; }
   .hero-cta .btn { flex: 1; }
+  .visit-card { padding: 24px; }
 }
