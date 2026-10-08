@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rida-boutique-demo.vercel.app/sitemap.xml

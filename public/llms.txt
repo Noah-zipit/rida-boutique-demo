@@ -1,0 +1,3 @@
+# Ashar Store
+
+Demo storefront for a fictional clothing store. Sample catalog, placeholder contact details.

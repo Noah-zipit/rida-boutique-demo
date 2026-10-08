@@ -1,24 +1,29 @@
-# Rida Boutique Demo
+# Ashar Store (demo storefront)
 
-A boutique website demo for **Rida Boutique** — women's wear at Shop UG-10A,
-Hyderi Gold Mark, North Nazimabad, Karachi. Built with React 19, Vite, and
-Three.js (via @react-three/fiber), with a scroll-reactive Silk WebGL shader
-hero (adapted from React Bits' Silk component).
+A fictional clothing-store demo in the Nike design language: photography-first
+commerce with towering uppercase display type (Bebas Neue) burned into
+full-bleed campaign imagery, then dense neutral retail chrome — black/white
+monochrome, pill CTAs, tight 1:1 product cards, hairline dividers, no shadows.
+
+Design reference: `~/workspace/design-md/nike.md`. Constraints: `DESIGN.md`.
 
 Live demo: **https://rida-boutique-demo.vercel.app**
 
 ## What's inside
 
-- `src/` — the React app: product grid, product detail views, and 3D scene components
-- `products.json` — 8 real products with real Rs. prices, scraped from the
-  boutique's Instagram posts (HZ 3pc embroidered luxury, BinSaeed, Sadabahar, Saya)
-- `ig-posts.json` — raw Instagram post data the catalogue is built from
-- `public/img/` — product photos
-- `rida-boutique-demo.html` — a standalone static version of the site
-- `dist.zip` — an archived production build
+- `src/` — React 19 + Vite app
+  - `src/data/catalog.js` — 9 sample products (stitched suits, lawn, khaddar,
+    festive wear) with Rs. prices and WhatsApp order links to a **placeholder**
+    demo number (`0300 0000000`)
+  - `src/components/` — Chrome (utility bar, nav + mobile drawer, footer),
+    Hero, Shop (category filter chips + live search + product grid),
+    Sections (campaign tile, story band, FAQ accordion), Legal
+    (terms, privacy, custom 404)
+- `public/img/` — demo product photography
+- `public/` — `sitemap.xml`, `robots.txt`, `llms.txt`
 
-Every product carries a WhatsApp order button pointing at the boutique's own
-number, so a customer can message them directly about a suit.
+This is a portfolio demo: fictional brand, sample catalog, placeholder contact
+details. No real store, phone number, or address appears anywhere.
 
 ## Run it locally
 
@@ -33,5 +38,4 @@ npm run dev
 npm run build   # outputs to dist/
 ```
 
-Pushes to `master` are deployed automatically: the repo has a GitHub Pages
-workflow (`.github/workflows/pages.yml`) that builds `dist/` and publishes it.
+Deploys to Vercel (project `rida-boutique-demo`) from `master`.
