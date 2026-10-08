@@ -1,26 +1,33 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { CATEGORIES, products } from '../data/catalog.js'
-import { SearchIcon, WhatsAppIcon } from './icons.jsx'
+import { useCart } from '../store/cart.jsx'
+import { SearchIcon } from './icons.jsx'
 
 function ProductCard({ p }) {
+  const { add } = useCart()
   return (
     <article className="card">
-      <a className="card-img" href={p.wa} target="_blank" rel="noreferrer" aria-label={`Order ${p.name} on WhatsApp`}>
+      <div className="card-img">
         <img
           src={p.img}
           alt={p.alt}
           loading="lazy"
           onError={(e) => { e.currentTarget.style.display = 'none' }}
         />
-      </a>
+      </div>
       <div className="card-meta">
         <h3 className="card-name">{p.name}</h3>
         <p className="card-sub">{p.subtitle}</p>
         <div className="card-row">
           <span className="card-price">{p.price}</span>
-          <a className="wa-link" href={p.wa} target="_blank" rel="noreferrer" aria-label={`Order ${p.name} on WhatsApp`}>
-            <WhatsAppIcon /> Order
-          </a>
+          <button
+            type="button"
+            className="pill pill-sm card-add"
+            onClick={() => add(p.id)}
+            aria-label={`Add ${p.name} to bag`}
+          >
+            Add to bag
+          </button>
         </div>
       </div>
     </article>

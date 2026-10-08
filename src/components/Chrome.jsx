@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { shopWA, WHATSAPP_DISPLAY } from '../data/catalog.js'
-import { SearchIcon, WhatsAppIcon, MenuIcon, CloseIcon } from './icons.jsx'
+import { useCart } from '../store/cart.jsx'
+import { SearchIcon, MenuIcon, CloseIcon, BagIcon } from './icons.jsx'
 
 export function setShopFilter(category) {
   window.dispatchEvent(new CustomEvent('as:filter', { detail: category }))
@@ -24,6 +25,7 @@ const NAV_LINKS = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const { count, setOpen: setBagOpen } = useCart()
   useEffect(() => {
     if (!open) return
     const onKey = (e) => { if (e.key === 'Escape') setOpen(false) }
@@ -61,9 +63,16 @@ export function Navbar() {
             <button className="icon-btn" aria-label="Search the collection" onClick={focusSearch}>
               <SearchIcon />
             </button>
-            <a className="icon-btn" aria-label="Chat on WhatsApp" href={shopWA} target="_blank" rel="noreferrer">
-              <WhatsAppIcon />
-            </a>
+            <button
+              className="icon-btn bag-btn"
+              aria-label={count === 0 ? 'Open bag, empty' : `Open bag, ${count} item${count === 1 ? '' : 's'}`}
+              onClick={() => setBagOpen(true)}
+            >
+              <BagIcon />
+              {count > 0 && (
+                <span className="bag-badge" aria-hidden="true">{count > 99 ? '99+' : count}</span>
+              )}
+            </button>
           </div>
         </div>
       </header>

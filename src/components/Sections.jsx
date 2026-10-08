@@ -58,7 +58,7 @@ export function StoryBand() {
 const FAQS = [
   {
     q: 'How do I place an order?',
-    a: 'Tap any Order button. It opens WhatsApp with your pick already written out. Send it, tell us your size and address, and we confirm.',
+    a: 'Tap Add to bag on anything you like, then open your bag and hit Order on WhatsApp. It sends us your whole list in one message. Tell us your size and address, and we confirm.',
   },
   {
     q: 'What sizes do you carry?',

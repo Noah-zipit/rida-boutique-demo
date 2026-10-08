@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { UtilityBar, Navbar, Footer } from './components/Chrome.jsx'
 import Hero from './components/Hero.jsx'
 import Shop from './components/Shop.jsx'
+import Bag from './components/Bag.jsx'
+import { CartProvider } from './store/cart.jsx'
 import { EditorialTile, StoryBand, Faq } from './components/Sections.jsx'
 import { Terms, Privacy, NotFound } from './components/Legal.jsx'
 
@@ -68,14 +70,17 @@ export default function App() {
   }, [route])
 
   return (
-    <div ref={rootRef}>
-      <UtilityBar />
-      <Navbar />
-      {route === 'home' && <Home />}
-      {route === 'terms' && <main><Terms /></main>}
-      {route === 'privacy' && <main><Privacy /></main>}
-      {route === '404' && <main><NotFound /></main>}
-      <Footer />
-    </div>
+    <CartProvider>
+      <div ref={rootRef}>
+        <UtilityBar />
+        <Navbar />
+        {route === 'home' && <Home />}
+        {route === 'terms' && <main><Terms /></main>}
+        {route === 'privacy' && <main><Privacy /></main>}
+        {route === '404' && <main><NotFound /></main>}
+        <Footer />
+        <Bag />
+      </div>
+    </CartProvider>
   )
 }
