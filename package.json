@@ -14,5 +14,9 @@
     "preview": "vite preview"
   },
   "type": "module",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "description": "Ashar Store demo storefront — stitched suits, lawn and festive wear; React + Vite with cart drawer and WhatsApp checkout.",
+  "author": "Ashar Qaisar <noahext994@gmail.com>",
+  "license": "MIT",
+  "repository": "github:Noah-zipit/rida-boutique-demo"
 }
